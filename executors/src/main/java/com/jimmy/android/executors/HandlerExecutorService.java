@@ -114,7 +114,7 @@ class HandlerExecutorService extends AbstractExecutorService {
             try {
                 delegate.run();
             } catch (Throwable e) {
-                if (isDisposed() && onError != null) {
+                if (!isDisposed() && onError != null) {
                     onError.accept(e);
                 }
                 return;
