@@ -7,6 +7,7 @@ AndroidExecutors 的demo
 
 ```java
 mFuture = CompletableFuture.supplyAsync(() -> {
+                // 异步子线程
                 Log.d(TAG, "supply:" + Thread.currentThread());
                 try {
                     Thread.sleep(3000);
@@ -15,7 +16,8 @@ mFuture = CompletableFuture.supplyAsync(() -> {
                 }
                 return "123321";
             }).thenAcceptAsync(s -> {
+                // Android主线程回掉
                 Log.d(TAG, s + " - " + Thread.currentThread() + " - " + System.currentTimeMillis());
-                throw new AndroidRuntimeException("jeruowieur");
+                // throw new AndroidRuntimeException("jeruowieur");
             }, AndroidExecutors.mainExecutor());
 ```
