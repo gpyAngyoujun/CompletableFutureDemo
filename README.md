@@ -1,7 +1,7 @@
 # CompletableFutureDemo
 AndroidExecutors 的demo
 
-这个AndroidExecutors是针对java8中CompletableFuture所设计的一个executors，其使用方法类似RxAndroid。
+这个AndroidExecutors是针对java8中CompletableFuture所设计的一个executor，其功能类似RxAndroid。
 
 - 使用方法的代码：
 
